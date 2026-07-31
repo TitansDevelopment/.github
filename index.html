@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TitansDevelopment - Systems & Infrastructure</title>
+    <meta name="description" content="Portfolio of TitansDevelopment - Core Systems, Client Architecture, and Distributed Backends">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #050505;
+            --text-color: #e0e0e0;
+            --accent-color: #00ffcc;
+            --card-bg: rgba(20, 20, 20, 0.6);
+            --card-border: rgba(255, 255, 255, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(0, 255, 204, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(0, 100, 255, 0.03) 0%, transparent 50%);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        header {
+            margin-bottom: 5rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        h1 {
+            font-family: 'Fira Code', monospace;
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, #fff, #888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h1::before {
+            content: "> ";
+            color: var(--accent-color);
+            -webkit-text-fill-color: var(--accent-color);
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #888;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            animation: slideUp 0.8s ease-out forwards;
+        }
+
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+        .card:nth-child(4) { animation-delay: 0.4s; }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 255, 204, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .card h3 {
+            font-family: 'Fira Code', monospace;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .card ul {
+            list-style: none;
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+
+        .card ul li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .card ul li::before {
+            content: "•";
+            color: var(--accent-color);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .footer {
+            margin-top: 5rem;
+            text-align: center;
+            font-family: 'Fira Code', monospace;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TitansDevelopment</h1>
+            <p class="subtitle">Core Systems / Client Architecture / Distributed Backend</p>
+        </header>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Titans Architecture</h3>
+                <ul>
+                    <li>TitansCore</li>
+                    <li>TitansCombat</li>
+                    <li>TitansLauncher_ImGui</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Matex Network</h3>
+                <ul>
+                    <li>matexmc</li>
+                    <li>MatexPractice & Replay</li>
+                    <li>MatexTags & MatexWeb</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Systems & Routing</h3>
+                <ul>
+                    <li>Velocity System</li>
+                    <li>Cloud System</li>
+                    <li>OpenCommunity</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Tooling & Internals</h3>
+                <ul>
+                    <li>OpenMyau-Plus</li>
+                    <li>clicker</li>
+                    <li>Plugin</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            System Online // TitansDevelopment
+        </div>
+    </div>
+</body>
+</html>
